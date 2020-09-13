@@ -1,0 +1,12 @@
+#ppom-pdf-preview-wrapper {
+  padding: 15px 0 15px 0;
+}
+
+.ppom-pdf-preview-canvas {
+  margin: 1px;
+  margin: 0 auto;
+}
+
+#ppom-pdf-preview-wrapper canvas {
+  border: 1px solid #8080804a;
+}
