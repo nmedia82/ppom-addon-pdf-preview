@@ -3,6 +3,10 @@ jQuery(function($) {
 
     const dir_name = ppom_file_vars.file_upload_path;
 
+    const wc_product_qty = jQuery('form.cart').find('input[name="quantity"]');
+
+    const enable_pages_qty = 'yes';
+
     $(document).on('ppom_image_ready', function(e) {
 
         var image_url = e.image.name;
@@ -43,6 +47,12 @@ function renderPDF(url, canvasContainer, options) {
     }
 
     function renderPages(pdfDoc) {
+
+        const total_pages = pdfDoc.numPages | 0;
+
+        wc_product_qty.val(total_pages);
+        ppom_update_option_prices();
+
         for (var num = 1; num <= pdfDoc.numPages; num++)
             pdfDoc.getPage(num).then(renderPage);
     }
