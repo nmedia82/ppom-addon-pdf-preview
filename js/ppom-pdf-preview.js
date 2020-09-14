@@ -16,6 +16,8 @@ jQuery(function($) {
 
         const pdf_file_url = dir_name + image_id + '.pdf';
 
+        $('.u_i_c_box').hide();
+
         renderPDF(pdf_file_url, document.getElementById('ppom-pdf-preview-wrapper'));
     });
 });
